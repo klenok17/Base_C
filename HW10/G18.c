@@ -13,14 +13,14 @@ void remove_extra_spaces(char s[]) {
 }
 
 int main(void) {
-    FILE *in = fopen("input_G18.txt", "r");
+    FILE *in = fopen("input.txt", "r");
     if (!in) return 1;
     char s[1002];
     if (!fgets(s, sizeof(s), in)) { fclose(in); return 1; }
     fclose(in);
     s[strcspn(s, "\r\n")] = '\0';
     remove_extra_spaces(s);
-    FILE *out = fopen("output_G18.txt", "w");
+    FILE *out = fopen("output.txt", "w");
     if (!out) return 1;
     fprintf(out, "%s\n", s);
     fclose(out);

@@ -13,7 +13,7 @@ bool is_palindrom(const char s[]) {
 }
 
 int main(void) {
-    FILE *in = fopen("input_G20.txt", "r");
+    FILE *in = fopen("input.txt", "r");
     if (!in) return 1;
     char s[1002];
     if (!fgets(s, sizeof(s), in)) { fclose(in); return 1; }

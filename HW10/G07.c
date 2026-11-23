@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-    FILE *in = fopen("input_G7.txt", "r");
+    FILE *in = fopen("input.txt", "r");
     if (!in) return 1;
     int lower = 0, upper = 0, ch;
     while ((ch = fgetc(in)) != EOF) {
@@ -9,7 +9,7 @@ int main(void) {
         else if (ch >= 'A' && ch <= 'Z') upper++;
     }
     fclose(in);
-    FILE *out = fopen("output_G7.txt", "w");
+    FILE *out = fopen("output.txt", "w");
     if (!out) return 1;
     fprintf(out, "%d %d\n", lower, upper);
     fclose(out);

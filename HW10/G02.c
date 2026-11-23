@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-    FILE *in = fopen("input_G2.txt", "r");
+    FILE *in = fopen("input.txt", "r");
     if (in == NULL) return 1;
     int n;
     if (fscanf(in, "%d", &n) != 1) { fclose(in); return 1; }
@@ -14,7 +14,7 @@ int main(void) {
         s[2 * i + 1] = (char)('0' + 2 * (i % 4 + 1));
     }
     s[n] = '\0';
-    FILE *out = fopen("output_G2.txt", "w");
+    FILE *out = fopen("output.txt", "w");
     if (out == NULL) return 1;
     fprintf(out, "%s\n", s);
     fclose(out);

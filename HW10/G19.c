@@ -17,13 +17,13 @@ void make_palindrome(const char s[], char out[]) {
 }
 
 int main(void) {
-    FILE *in = fopen("input_G19.txt", "r");
+    FILE *in = fopen("input.txt", "r");
     if (!in) return 1;
     char s[1002], result[1002];
     if (!fgets(s, sizeof(s), in)) { fclose(in); return 1; }
     fclose(in);
     make_palindrome(s, result);
-    FILE *out = fopen("output_G19.txt", "w");
+    FILE *out = fopen("output.txt", "w");
     if (!out) return 1;
     fprintf(out, "%s\n", result);
     fclose(out);

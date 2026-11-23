@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main(void) {
-    FILE *in = fopen("input_G10.txt", "r");
+    FILE *in = fopen("input.txt", "r");
     if (!in) return 1;
     char s[1002];
     if (!fgets(s, sizeof(s), in)) { fclose(in); return 1; }
@@ -15,7 +15,7 @@ int main(void) {
         int len = i - start;
         if (len > bestLen) { bestLen = len; bestStart = start; }
     }
-    FILE *out = fopen("output_G10.txt", "w");
+    FILE *out = fopen("output.txt", "w");
     if (!out) return 1;
     fprintf(out, "%.*s\n", bestLen, s + bestStart);
     fclose(out);

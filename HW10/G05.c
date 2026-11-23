@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main(void) {
-    FILE *in = fopen("input_G5.txt", "r");
-    FILE *out = fopen("output_G5.txt", "w");
+    FILE *in = fopen("input.txt", "r");
+    FILE *out = fopen("output.txt", "w");
     if (!in || !out) {
         if (in) fclose(in);
         if (out) fclose(out);

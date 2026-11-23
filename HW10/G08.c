@@ -9,7 +9,7 @@ int cmp(const void *a, const void *b) {
 }
 
 int main(void) {
-    FILE *in = fopen("input_G8.txt", "r");
+    FILE *in = fopen("input.txt", "r");
     if (!in) return 1;
     char s[1002];
     if (!fgets(s, sizeof(s), in)) { fclose(in); return 1; }
@@ -28,7 +28,7 @@ int main(void) {
         } else i++;
     }
     qsort(values, count, sizeof(values[0]), cmp);
-    FILE *out = fopen("output_G8.txt", "w");
+    FILE *out = fopen("output.txt", "w");
     if (!out) return 1;
     for (int i = 0; i < count; i++)
         fprintf(out, "%s%d", i ? " " : "", values[i]);

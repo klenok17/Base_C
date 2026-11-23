@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main(void) {
-    FILE *in = fopen("input_G13.txt", "r");
+    FILE *in = fopen("input.txt", "r");
     if (!in) return 1;
     char path[1100];
     if (!fgets(path, sizeof(path), in)) { fclose(in); return 1; }
@@ -12,7 +12,7 @@ int main(void) {
     char *name = (slash == NULL) ? path : slash + 1;
     char *dot = strrchr(name, '.');
     if (dot != NULL) *dot = '\0';
-    FILE *out = fopen("output_G13.txt", "w");
+    FILE *out = fopen("output.txt", "w");
     if (!out) return 1;
     fprintf(out, "%s.html\n", path);
     fclose(out);

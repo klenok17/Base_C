@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-    FILE *in = fopen("input_G11.txt", "r");
+    FILE *in = fopen("input.txt", "r");
     if (!in) return 1;
     int ch, last = ' ', count = 0;
     while ((ch = fgetc(in)) != EOF) {
@@ -12,7 +12,7 @@ int main(void) {
     }
     if (last == 'a') count++;
     fclose(in);
-    FILE *out = fopen("output_G11.txt", "w");
+    FILE *out = fopen("output.txt", "w");
     if (!out) return 1;
     fprintf(out, "%d\n", count);
     fclose(out);

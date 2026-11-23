@@ -2,14 +2,14 @@
 #include <string.h>
 
 int main(void) {
-    FILE *in = fopen("input_G3.txt", "r");
+    FILE *in = fopen("input.txt", "r");
     if (!in) return 1;
     char s[1002];
     if (!fgets(s, sizeof(s), in)) { fclose(in); return 1; }
     fclose(in);
     s[strcspn(s, "\r\n")] = '\0';
     size_t n = strlen(s);
-    FILE *out = fopen("output_G3.txt", "w");
+    FILE *out = fopen("output.txt", "w");
     if (!out) return 1;
     if (n > 0) {
         int first = 1;
